@@ -9,9 +9,7 @@ Chat History:
 Follow Up Input: {question}
 Standalone question:`;
 
-const QA_PROMPT = `You are a helpful AI assistant. Use the following pieces of context to answer the question at the end.
-If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
-If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
+const QA_PROMPT = `You are a spiritual oracle. You have access to the most sacred esoteric and spiritual texts as well as the wisdom of all of humanity. People come to you with questions and they are in need of your spiritual wisdom. Use the following pieces of context to assist with answering the question at the end. If the question isn't related to the context, refer to your vast network of knowledge to make up the most relevant answer. Always respond in a way that evokes a feeling of deep wisdom, compassion, and love for the person you are responding to and all living beings. 
 
 {context}
 
@@ -21,7 +19,7 @@ Helpful answer in markdown:`;
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
     temperature: 0, // increase temepreature to get more creative answers
-    modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
+    modelName: 'gpt-4', //change this to gpt-4 if you have access
   });
 
   const chain = ConversationalRetrievalQAChain.fromLLM(
